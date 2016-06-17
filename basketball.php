@@ -3,9 +3,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$user = 'basketball';
-$password = 'basketball';
-$db = new PDO('mysql:host=localhost;dbname=basketball', $user, $password);
+// $user = 'basketball';
+// $password = 'basketball';
+// $db = new PDO('mysql:host=localhost;dbname=basketball', $user, $password);
+$dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
+$dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');
+$dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+$dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+$db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
 $username = $_POST['username'];
 $query = "SELECT name FROM user WHERE name = '$username'";

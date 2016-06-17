@@ -5,9 +5,8 @@ $category = $_POST['category'];
 session_start();
 $userSession = $_SESSION['sessionUser'];
 //echo $userSession;
-$user = 'basketball';
-$password = 'basketball';
-$db = new PDO('mysql:host=localhost;dbname=basketball', $user, $password);
+require("dbConnector.php");
+$db = loadDatabase();
 
 $query = "SELECT id FROM user WHERE name = '$userSession'";
 $stmt = $db->prepare($query);

@@ -4,10 +4,10 @@
 function loadDatabase()
 {
 
-  $dbHost = "";
-  $dbPort = "";
-  $dbUser = "adminavGGRVZ";
-  $dbPassword = "uan79BAVksBA";
+  // $dbHost = "";
+  // $dbPort = "";
+  // $dbUser = "adminavGGRVZ";
+  // $dbPassword = "uan79BAVksBA";
 
      $dbName = "basketballproject";
 
@@ -17,7 +17,7 @@ function loadDatabase()
      $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
      $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 
-     $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+     $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
 
      return $db;
 

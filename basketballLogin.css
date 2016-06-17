@@ -1,0 +1,24 @@
+html body{
+  font-family: sans-serif;
+background: url("nbaBackground.jpg");
+background-size: cover no-repeat;
+}
+
+form {
+  align-items: center;
+}
+#username{
+  margin-left: 45%;
+  width: 200px;
+  height: 40px;
+}
+img {
+  width: 750px;
+  height: 500px;
+}
+
+#usernameSubmit {
+  margin-left: 48%;
+  width: 115px;
+  height: 75px;
+}

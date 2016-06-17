@@ -32,10 +32,11 @@ $lueCount = $cooLines[15];
 
 fclose($myfile);
 
-$user = 'basketball';
-$password = 'basketball';
-$db = new PDO('mysql:host=localhost;dbname=basketball', $user, $password);
-
+// $user = 'basketball';
+// $password = 'basketball';
+// $db = new PDO('mysql:host=localhost;dbname=basketball', $user, $password);
+require("dbConnector.php");
+$db = loadDatabase();
 
 $query = "SELECT u.name, c.content FROM user u INNER JOIN comment c ON u.id=c.userID WHERE c.category=1";
 $stmt = $db->prepare($query);
